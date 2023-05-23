@@ -1,7 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
+const db = require("./models/index");
 const { PORT } = require("./config/serverConfig");
+const CityRepository = require("./repository/city-repository");
 
 const setupAndStartServer = async () => {
   const app = express();
@@ -12,6 +14,15 @@ const setupAndStartServer = async () => {
   app.listen(PORT, () => {
     console.log(`Server started on ${PORT} ---`);
     // console.log(process.env);
+    // inside db we have City moodel
+    // console.log(db.City);
+    /* db.City.create({
+    /   name: "New Delhi",
+    });
+    // or we write our logic in repository then use
+    */
+    // const repo = new CityRepository();
+    // repo.createCity({ name: "Kolkata" });
   });
 };
 
