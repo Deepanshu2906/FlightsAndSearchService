@@ -5,6 +5,7 @@ const db = require("./models/index");
 const { PORT } = require("./config/serverConfig");
 
 const ApiRoutes = require("./routes/index");
+const { Airport, City } = require("./models/index");
 
 const setupAndStartServer = async () => {
   // create the express obj
@@ -27,6 +28,28 @@ const setupAndStartServer = async () => {
     */
     // const repo = new CityRepository();
     // repo.createCity({ name: "Kolkata" });
+    // 'include'  property how to use :
+    // const airports = await Airport.findAll({
+    //   include: [
+    //     {
+    //       model: City,
+    //     },
+    //   ],
+    // });
+    // console.log(airports);
+    if (process.env.SYNC_DB) {
+      db.sequelize.sync({ alter: true });
+    }
+    // if custom data like all airports of a particular city
+    // but we dont't want raw mysql query like 'join' , so here is the solution below:
+    // const city = await City.findOne({
+    //   where: {
+    //     id: 8,
+    //   },
+    // });
+    // // w/o db.sequelize.sync({ alter: true }); it will not parse airport
+    // const airports = await city.getAirports();
+    // console.log(city, "*************", airports);
   });
 };
 
