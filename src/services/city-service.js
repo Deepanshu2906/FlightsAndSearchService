@@ -1,6 +1,7 @@
 const { CityRepository } = require("../repository/index");
 
 class CityService {
+  // different way to write using constructor the same code as in cityrepository
   constructor() {
     this.cityRepository = new CityRepository();
   }

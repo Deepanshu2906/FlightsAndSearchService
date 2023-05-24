@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 
 const db = require("./models/index");
 const { PORT } = require("./config/serverConfig");
-const CityRepository = require("./repository/city-repository");
+//const CityRepository = require("./repository/city-repository");
 
 const setupAndStartServer = async () => {
   // create the express obj
