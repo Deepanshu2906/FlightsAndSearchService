@@ -1,5 +1,6 @@
 // wee need to have the access to models
 const { City } = require("../models/index");
+const { Op } = require("sequelize");
 
 class CityRepository {
   async createCity({ name }) {
@@ -56,8 +57,19 @@ class CityRepository {
       throw { error };
     }
   }
-  async getAllCities() {
+  async getAllCities(filter) {
+    // here filter is query params obj
     try {
+      if (filter.name) {
+        const cities = await City.findAll({
+          where: {
+            name: {
+              [Op.startsWith]: filter.name,
+            },
+          },
+        });
+        return cities;
+      }
       const cities = await City.findAll();
       return cities;
     } catch (error) {
