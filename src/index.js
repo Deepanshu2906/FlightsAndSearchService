@@ -50,9 +50,10 @@ const setupAndStartServer = async () => {
     // // w/o db.sequelize.sync({ alter: true }); it will not parse airport
     // const airports = await city.getAirports();
     // console.log(city, "*************", airports);
-    await Airplane.create({
-      modelNumber: "Bombardier CRJ",
-    });
+    // we also create except seederd also
+    // await Airplane.create({
+    //   modelNumber: "Bombardier CRJ",
+    // });
   });
 };
 

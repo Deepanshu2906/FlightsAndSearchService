@@ -41,6 +41,21 @@ and then execute
   ### City -> id, name, createAt, updatedAt
   ### Airport -> id, namr, address,city_id, createdAt, updatedAt
       Relationship -> City has many airports and Airport belong to a city ( one to many )
+
+
 ```
- npx sequelize model:generate --name Airport --attributes name:String,address:String,cityId:integer
- ```      
+  - command for creating model for the Airport table:
+     `npx sequelize model:generate --name Airport --attributes name:String,address:String,cityId:integer`
+ ```   
+ ```
+   - creating seeder file for  inserting initial airports data into db
+      `npx sequelize generate --name add-airports`
+
+   - once you have creted airports into seeders find now we can seed data into tables using below cli :
+     `npx sequelize db:seed:all`
+  
+```
+```
+   - command for creating Fligths model:
+  `npx sequelize model:generate --name Flights --attributes flightNumber:String,airplaneId:integer,departureAirportId:integer,arrivalAirportId:integer,arrivalTime:Date,departureTime:Date,price:integer,boardingGate:String,totalSeats:integer`
+```   
