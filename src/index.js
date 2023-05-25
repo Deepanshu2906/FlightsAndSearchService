@@ -5,7 +5,7 @@ const db = require("./models/index");
 const { PORT } = require("./config/serverConfig");
 
 const ApiRoutes = require("./routes/index");
-const { Airport, City } = require("./models/index");
+const { Airport, City, Airplane } = require("./models/index");
 
 const setupAndStartServer = async () => {
   // create the express obj
@@ -50,6 +50,9 @@ const setupAndStartServer = async () => {
     // // w/o db.sequelize.sync({ alter: true }); it will not parse airport
     // const airports = await city.getAirports();
     // console.log(city, "*************", airports);
+    await Airplane.create({
+      modelNumber: "Bombardier CRJ",
+    });
   });
 };
 
