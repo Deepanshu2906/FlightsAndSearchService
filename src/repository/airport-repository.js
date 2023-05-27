@@ -1,7 +1,17 @@
+const { Airport } = require("../models/index");
+const CrudRepository = require("./crud-respository");
+
+class AirportRepository extends CrudRepository {
+  constructor() {
+    super(Airport);
+  }
+}
+/*
 const { Op } = require("sequelize");
 const { Airport } = require("../models/index");
-
 class AirportRepository {
+
+  // at client side cityId pass karni hogi req.body mein otherwise error 
   async createAirport({ name, cityId }) {
     try {
       const airport = await Airport.create({
@@ -67,5 +77,6 @@ class AirportRepository {
     }
   }
 }
+*/
 
 module.exports = AirportRepository;

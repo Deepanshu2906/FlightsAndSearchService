@@ -5,7 +5,7 @@ const db = require("./models/index");
 const { PORT } = require("./config/serverConfig");
 
 const ApiRoutes = require("./routes/index");
-const { Airport, City, Airplane } = require("./models/index");
+// const { Airport, City, Airplane } = require("./models/index");
 
 const setupAndStartServer = async () => {
   // create the express obj

@@ -31,7 +31,7 @@ class CityRepository {
   async updateCity(cityId, data) {
     try {
       // The below approach also works but will return updated object
-      // if we r using pg sql then returning: true can be used else not
+      // if we r using pg sql then returning: true can  be used else not
       // const city = await City.update(data, {
       //   where: {
       //     id: cityId,

@@ -12,11 +12,11 @@ router.get("/city", CityController.getAll);
 router.patch("/city/:id", CityController.update);
 
 // APi for airport model
-router.post("/airport", AirportController.create);
-router.delete("/airport/:id", AirportController.destroy);
-router.get("/airport/:id", AirportController.get);
-router.get("/airport", AirportController.getAll);
-router.patch("/airport/:id", AirportController.update);
+router.post("/airports", AirportController.create);
+router.delete("/airports/:id", AirportController.destroy);
+router.get("/airports/:id", AirportController.get);
+router.get("/airports", AirportController.getAll);
+router.patch("/airports/:id", AirportController.update);
 
 // api for  flight crud
 router.post("/flights", FlightController.create);
